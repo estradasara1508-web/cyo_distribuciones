@@ -1,0 +1,5 @@
+#nosotros img {
+  max-height: 420px;
+  object-fit: cover;
+  width: 100%;
+}

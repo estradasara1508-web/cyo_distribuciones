@@ -1,0 +1,318 @@
+/* ==========================================
+   1. VARIABLES DE COLOR DEL PROYECTO
+   ========================================== */
+:root {
+    --gold: #d4af37;
+    --gold-dark: #b8960f;
+    --black: #1a1a1a;
+    --white: #ffffff;
+    --gray-border: #333333;
+    --bg-secondary: #2a2a2a;
+    --card-bg: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #bbbbbb;
+    --text-muted: #888888;
+    --input-bg: #2a2a2a;
+    --shadow: 0 10px 40px rgba(0,0,0,0.5);
+    --shadow-lg: 0 20px 60px rgba(0,0,0,0.5);
+    --transition: all 0.3s ease;
+}
+
+/* ==========================================
+   2. ESTILOS GENERALES Y FONDO
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--black) !important; /* Fondo oscuro principal */
+    color: var(--text-primary) !important;
+    transition: var(--transition);
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+/* ==========================================
+   3. NAVBAR (HEADER)
+   ========================================== */
+header {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--gold);
+    padding: 1rem 2rem;
+    transition: var(--transition);
+}
+
+header nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+header nav h1 {
+    color: var(--gold);
+    font-size: 1.5rem;
+}
+
+header nav ul {
+    list-style: none !important; /* Quita los puntitos de la lista */
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li a,
+header nav ul li button {
+    color: var(--text-secondary) !important;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    font-size: 0.95rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+header nav ul li a:hover,
+header nav ul li button:hover {
+    color: var(--gold) !important;
+}
+
+/* Botón del tema (Modo Claro/Oscuro) */
+.tema-btn {
+    background: transparent;
+    border: 2px solid var(--gold) !important;
+    color: var(--gold) !important;
+    padding: 0.4rem 1rem;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.tema-btn:hover {
+    background: var(--gold);
+    color: var(--black) !important;
+}
+
+/* ==========================================
+   4. BANNER (HERO)
+   ========================================== */
+.banner {
+    background: linear-gradient(135deg, var(--black), var(--bg-secondary));
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--gold);
+}
+
+.banner .contenido-banner h2 {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.banner .contenido-banner p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.banner .btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--black);
+    padding: 0.8rem 2.5rem;
+    border-radius: 40px;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.banner .btn:hover {
+    background: var(--gold-dark);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   5. SECCIONES DE CATEGORÍA Y PRODUCTOS
+   ========================================== */
+.categoria-seccion {
+    max-width: 1400px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.categoria-titulo {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.categoria-titulo::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--gold);
+    margin: 0.8rem auto 0;
+    border-radius: 2px;
+}
+
+.categoria-titulo span {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    display: inline-block;
+    padding: 0.2rem 1rem;
+    border-radius: 40px;
+    font-size: 1rem;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+    color: var(--black);
+}
+
+/* Cuadrícula que pone los productos en fila */
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+/* ==========================================
+   6. DISEÑO DE LA TARJETA DEL PRODUCTO
+   ========================================== */
+.producto-card {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--gold) !important;
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    width: 100%;
+}
+
+.producto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+    border-color: var(--gold-dark);
+}
+
+/* Contenedor de la imagen */
+.producto-imagen {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.producto-imagen img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Títulos y precios */
+.producto-card h3 {
+    font-size: 1.1rem;
+    color: var(--text-primary) !important;
+    min-height: 50px;
+    margin-bottom: 0.5rem;
+}
+
+.producto-card span {
+    color: var(--gold) !important;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0.5rem 0 1rem 0;
+}
+
+/* Botón de agregar */
+.producto-card .agregar-carrito {
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    padding: 0.6rem;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: var(--transition);
+    width: 100%;
+    cursor: pointer;
+}
+
+.producto-card .agregar-carrito:hover:not(:disabled) {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.producto-card .agregar-carrito:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Etiqueta de agotado */
+.producto-card .badge-agotado {
+    display: inline-block;
+    background: #dc3545;
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+/* ==========================================
+   7. FOOTER
+   ========================================== */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--gold);
+    margin-top: 2rem;
+    color: var(--text-secondary);
+}
+
+/* ==========================================
+   8. MODO CLARO (Para el botón del Navbar)
+   ========================================== */
+body.tema-claro {
+    --black: #f5f5f5;
+    --white: #1a1a1a;
+    --gray-border: #dddddd;
+    --bg-secondary: #e8e8e8;
+    --card-bg: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #555555;
+    --text-muted: #777777;
+    --input-bg: #f0f0f0;
+    --shadow: 0 10px 40px rgba(0,0,0,0.1);
+    --shadow-lg: 0 20px 60px rgba(0,0,0,0.1);
+    --modal-bg: #ffffff;
+}
+
+body.tema-claro {
+    background: var(--black) !important;
+    color: var(--text-primary) !important;
+}
