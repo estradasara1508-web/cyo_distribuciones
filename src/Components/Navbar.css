@@ -1,0 +1,22 @@
+.beer-navbar {
+  background-color: #3b1f0d;
+  padding: 18px 0;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.beer-navbar .navbar-brand {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  color: #f3d6a4;
+}
+
+.beer-navbar .nav-link {
+  font-size: 1rem;
+  margin-left: 18px;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.beer-navbar .nav-link:hover {
+  color: #f3d6a4;
+}

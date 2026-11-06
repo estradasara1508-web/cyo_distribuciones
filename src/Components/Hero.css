@@ -1,0 +1,89 @@
+.hero-carousel {
+  height: 80vh;
+  min-height: 500px;
+  background-color: var(--black);
+}
+
+.hero-slide-container {
+  display: flex;
+  height: 80vh;
+  min-height: 500px;
+  width: 100%;
+}
+
+/* Mitad izquierda (Fondo del producto) */
+.hero-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-secondary); /* 👈 Usa el color de fondo secundario */
+  transition: var(--transition);
+}
+
+/* Un pequeño truco: para que la primera imagen tenga el destello dorado y la segunda sea oscura */
+.carousel-item.active .hero-left {
+  background: linear-gradient(to right, var(--gold), var(--gold-dark));
+}
+
+.hero-bottle {
+  height: 90%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+/* Mitad derecha (Textos) */
+.hero-right {
+  flex: 1;
+  background: var(--card-bg); 
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.hero-subtitle {
+  color: var(--gold);
+  letter-spacing: 3px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.hero-text {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 400px;
+  transition: var(--transition);
+}
+
+/* Botón de Bootstrap adaptado a tus colores */
+.hero-right .btn-outline-warning {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.hero-right .btn-outline-warning:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-slide-container { flex-direction: column; }
+  .hero-left { min-height: 300px; }
+  .hero-right { padding: 2rem; text-align: center; align-items: center; }
+  .hero-title { font-size: 2.5rem; }
+}
